@@ -1,0 +1,53 @@
+#feedback-container {
+  width: 295px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#avatar-feedback {
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffff;
+  background-color: orange;
+  margin: auto;
+}
+
+#feedback-username {
+  font-family: "Poppins-bold";
+  font-size: 20px;
+  color: #888888;
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+#feedback-text {
+  padding: 20px;
+  margin: 20px 20px 0;
+  font-family: "Poppins-italic";
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+#feeback-ratings {
+  display: flex;
+  justify-content: center;
+}
+
+#edit-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#edit-button {
+  box-shadow: none;
+  width: 50px;
+  height: 50px;
+}
+
+#edit-icon {
+  color: #ffff;
+}

@@ -1,0 +1,77 @@
+#main-container {
+  padding: 20px;
+  text-align: left;
+  color: #888888;
+  border: 0.5px solid #888888;
+  border-radius: 5px;
+}
+
+.parking-type {
+  font-family: "Poppins-bold";
+  font-size: 18px;
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+.text-field {
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+}
+
+#button-submit {
+  font-family: "Poppins-bold";
+  border-radius: 50px;
+  width: 200px;
+  padding: 5px;
+  margin-top: 50px;
+}
+
+#preview-container {
+  padding: 10px;
+  text-align: center;
+  border: 0.5px solid #1eb044;
+  border-radius: 5px;
+  box-shadow: none;
+  height: 550px;
+  margin-left: 15px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  background-color: #b2ffc6;
+  color: #1eb044;
+  padding: 10px;
+}
+
+#preview-text {
+  font-family: "Poppins-italic";
+  text-align: center;
+  margin: 248px 0;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.area-row-generator {
+  display: flex;
+}
+
+.area-column-generator {
+  display: inline-flex;
+  padding: 10px;
+  border: 1px dashed #888888;
+  box-shadow: none;
+  margin: 5px;
+}
+
+.slot-row-generator {
+  padding: 22px;
+  border: 1px solid #00ff43;
+  margin: 5px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.slot-number {
+  font-family: "Poppins-light";
+  color: #00ff43;
+}

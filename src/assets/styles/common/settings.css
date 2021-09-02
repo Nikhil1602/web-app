@@ -1,0 +1,25 @@
+#left-form-fields {
+  display: flex;
+}
+
+.chips {
+  margin: 2px;
+}
+
+/* Right Form */
+
+#button-save {
+  margin: 10px 20px 10px 0;
+}
+
+#button-cancel {
+  margin: 10px 0 10px 0;
+}
+
+#button-save,
+#button-reset {
+  border-radius: 50px;
+  width: 150px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

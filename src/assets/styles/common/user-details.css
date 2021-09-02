@@ -1,0 +1,40 @@
+#user-details-container {
+  display: block;
+  width: 100%;
+}
+
+#user-container {
+  margin: 5px 0;
+  border: 0.5px solid #888888;
+  box-shadow: none;
+}
+
+#avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background-color: orange;
+}
+
+#user h3 {
+  padding-left: 20px;
+  font-family: "Poppins-bold";
+}
+
+#user-info-first-column h4,
+#user-info-second-column h4,
+#user h3 {
+  display: flex;
+  align-items: center;
+  color: #888888;
+  letter-spacing: 1px;
+  line-height: 28px;
+}
+
+#user-info-first-column h4,
+#user-info-second-column h4 {
+  font-family: "Poppins-italic";
+  margin-left: 56px;
+  padding-left: 16px;
+  font-size: 16px;
+}

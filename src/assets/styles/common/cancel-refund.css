@@ -1,0 +1,35 @@
+#user-refund-container {
+  flex-grow: 1;
+}
+
+#user-refunds {
+  margin: 10px 0;
+}
+
+#refunds {
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  box-shadow: none;
+  border: 1px solid #888888;
+}
+
+#avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+}
+
+#user-name {
+  display: flex;
+  align-items: center;
+  color: #888888;
+  padding-left: 20px;
+  font-family: "Poppins-bold";
+  letter-spacing: 1px;
+  line-height: 28px;
+}
+
+#button-refund {
+  margin-left: auto;
+}

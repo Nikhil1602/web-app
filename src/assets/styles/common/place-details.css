@@ -1,0 +1,29 @@
+#place-left-detail {
+  padding: 16px 0px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+#place-left-detail h1 {
+  font-family: "Poppins-bold";
+}
+
+#place-left-detail p {
+  font-family: "Poppins-regular";
+  font-style: italic;
+}
+
+#place-right-detail {
+  padding: 30px;
+  text-align: right;
+  font-style: italic;
+}
+
+#place-right-detail p {
+  font-family: "Poppins-light";
+  font-style: italic;
+}
+
+#place-right-detail p:nth-child(2) {
+  direction: rtl;
+}

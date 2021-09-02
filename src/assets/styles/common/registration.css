@@ -1,0 +1,100 @@
+#parent-div {
+  height: 100vh;
+  width: 100vw;
+  background-color: #00ff43;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#child-div {
+  position: absolute;
+  width: 350px;
+  height: 600px;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#registration-form {
+  margin: 50px auto;
+  color: #888888;
+}
+
+#registration-form img {
+  width: 120px;
+}
+
+#registration-form h1 {
+  font-family: "Poppins-bold";
+  line-height: 1.2em;
+  letter-spacing: 1px;
+}
+
+#registration-form p {
+  font-family: "Poppins-light";
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+#icon {
+  color: #888888;
+  margin: 0 10px;
+  opacity: 50%;
+}
+
+#eye-icon {
+  color: #888888;
+  opacity: 50%;
+  width: 25px;
+}
+
+#forgot-password-link {
+  font-family: "Poppins-light";
+  font-size: 12px;
+  color: #00ff43;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+  letter-spacing: 1px;
+}
+
+#hide-link {
+  display: none;
+}
+
+#original-div {
+  margin-top: 80px;
+}
+
+#modified-div {
+  margin-top: 44px;
+}
+
+#submit-button {
+  font-family: "Poppins-bold";
+  width: 80%;
+  padding: 10px 50px;
+  display: flex;
+  margin: 10px 10%;
+  border-radius: 50px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #00ff43;
+  border: none;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#bottom-area {
+  font-family: "Poppins-light";
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+#bottom-area a {
+  font-family: "Poppins-light";
+  color: #00ff43;
+}
