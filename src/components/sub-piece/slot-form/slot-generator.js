@@ -17,7 +17,7 @@ const GenerateSlot = (props) => {
 
   return (
     <>
-      {rowArea.map((v, i) => {
+      {rowArea.map(() => {
         return (
           <Grid item className="area-row-generator">
             {colArea.map(() => {
