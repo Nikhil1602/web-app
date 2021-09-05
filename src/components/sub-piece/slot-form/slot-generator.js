@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Paper, Grid } from "@material-ui/core";
 import { fillArray, generator, createGrid } from "../../../utils/functions";
 
 const GenerateSlot = (props) => {
   let [rowArea, colArea, rowSlot, colSlot] = fillArray(props.data);
-  let i = 1;
+  let n = 1;
 
   // return (
   //   <>
@@ -17,7 +17,7 @@ const GenerateSlot = (props) => {
 
   return (
     <>
-      {rowArea.map(() => {
+      {rowArea.map((v, i) => {
         return (
           <Grid item className="area-row-generator">
             {colArea.map(() => {
@@ -29,7 +29,7 @@ const GenerateSlot = (props) => {
                         {rowSlot.map(() => {
                           return (
                             <Paper className="slot-row-generator">
-                              <p className="slot-number">{generator(i++)}</p>
+                              <p className="slot-number">{generator(n++)}</p>
                             </Paper>
                           );
                         })}
