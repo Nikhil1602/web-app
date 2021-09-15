@@ -137,7 +137,29 @@ const shrink = {
   shrink: true,
 };
 
+const adminData = {
+  placeName: "",
+  category: "others",
+  address: "",
+  openingTime: "",
+  closingTime: "",
+  workingDays: [],
+  vehicleType: "two",
+  amountCharge: {
+    two: "",
+    threeFour: "",
+  },
+  delayCharge: {
+    two: "",
+    threeFour: "",
+  },
+  duration: {
+    delay: 15,
+    charge: 60,
+  },
+};
+
 export { userAccount, userLength };
-export { details, menu, tab };
+export { details, menu, tab, adminData };
 export { days, MenuProps, today };
 export { passwordLength, shrink };

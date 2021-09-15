@@ -1,16 +1,15 @@
 import React from "react";
 import { InputLabel, FormControl } from "@material-ui/core";
 import { OutlinedInput, InputAdornment } from "@material-ui/core";
-// import {
-//   rightMargin,
-//   setMargin,
-// } from "../../../assets/styles/components/custom/styles";
 import { adjustMargin } from "../../../assets/styles/custom";
 import { checkType } from "../../../utils/functions";
 
 const AmountCharge = (props) => {
-  const handleObject = (prop1, prop2) => (event) => {
-    props.setData({ ...props.data, [prop1]: { [prop2]: event.target.value } });
+  const handleObject = (event) => {
+    props.setData({
+      ...props.data,
+      amountCharge: { ...props.data.amountCharge, two: event.target.value },
+    });
   };
 
   return (
@@ -28,7 +27,7 @@ const AmountCharge = (props) => {
         label="Amount to be charge"
         placeholder="2 wheelers"
         style={adjustMargin.right}
-        onChange={handleObject("amountCharge", "two")}
+        onChange={handleObject}
         disabled={checkType(false, props, "other")}
         startAdornment={<InputAdornment position="start">₹</InputAdornment>}
       />

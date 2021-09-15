@@ -14,7 +14,6 @@ const App = () => {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log(user.emailVerified);
       if (user && user.emailVerified) {
         ReactDOM.render(
           <>

@@ -5,6 +5,7 @@ import theme from "../../../assets/theme";
 import { details } from "../../../utils/container";
 import { checkpoint, numConverter, setDetails } from "../../../utils/functions";
 import { FieldOne, FieldTwo } from "./fields";
+import Database from "../../../backend/database";
 
 const FillDetails = (props) => {
   const submitForm = () => {
@@ -19,6 +20,7 @@ const FillDetails = (props) => {
       );
       props.setValue(true);
       window.localStorage.setItem("info", JSON.stringify(details));
+      Database(props.state, "slot-data");
     }
   };
 

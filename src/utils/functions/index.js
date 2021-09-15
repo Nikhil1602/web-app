@@ -231,6 +231,84 @@ const createGrid = (value_1, value_2, value_3) => {
   );
 };
 
+const isFormFilled = (data) => {
+  if (
+    data.placeName != "" &&
+    data.address != "" &&
+    data.openingTime != "" &&
+    data.closingTime != "" &&
+    data.workingDays != [] &&
+    data.vehicleType == "two" &&
+    data.amountCharge.two != "" &&
+    data.delayCharge.two != ""
+  ) {
+    if (data.amountCharge.threeFour == "" && data.delayCharge.threeFour == "") {
+      return true;
+    }
+    return false;
+  } else if (
+    data.placeName != "" &&
+    data.address != "" &&
+    data.openingTime != "" &&
+    data.closingTime != "" &&
+    data.workingDays != [] &&
+    data.vehicleType == "three" &&
+    data.amountCharge.threeFour != "" &&
+    data.delayCharge.threeFour != ""
+  ) {
+    if (data.amountCharge.two == "" && data.delayCharge.two == "") {
+      return true;
+    }
+    return false;
+  } else if (
+    data.placeName != "" &&
+    data.address != "" &&
+    data.openingTime != "" &&
+    data.closingTime != "" &&
+    data.workingDays != [] &&
+    data.vehicleType == "four" &&
+    data.amountCharge.threeFour != "" &&
+    data.delayCharge.threeFour != ""
+  ) {
+    if (data.amountCharge.two == "" && data.delayCharge.two == "") {
+      return true;
+    }
+    return false;
+  } else if (
+    data.placeName != "" &&
+    data.address != "" &&
+    data.openingTime != "" &&
+    data.closingTime != "" &&
+    data.workingDays != [] &&
+    data.vehicleType == "all"
+  ) {
+    if (
+      data.amountCharge.threeFour != "" &&
+      data.delayCharge.threeFour != "" &&
+      data.amountCharge.two != "" &&
+      data.delayCharge.two != ""
+    ) {
+      return true;
+    }
+    return false;
+  } else {
+    return false;
+  }
+};
+
+const formAlert = (message, value) => {
+  // const [open, setOpen] = React.useState(true);
+  if (value) {
+    ReactDOM.render(
+      <div style={adjustWidth.width2}>
+        <Alert severity="success">{message}</Alert>
+      </div>,
+      document.getElementById("header")
+    );
+  }
+};
+
 export { generateName, switchMenu, checkpoint, RenderScreen, createGrid };
-export { generator, getStyles, formatDate, alertBox, successBox };
+export { generator, getStyles, formatDate, alertBox, successBox, isFormFilled };
 export { adjustStyle, numConverter, setDetails, fillArray, checkType };
+export { formAlert };

@@ -23,7 +23,8 @@ const Account = () => {
     showPassword: false,
   });
 
-  const submitForm = () => {
+  const submitForm = (e) => {
+    e.preventDefault();
     if (changes.display) {
       AccountLogin(values);
     } else if (changes.button != "Send Mail") {

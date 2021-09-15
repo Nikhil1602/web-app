@@ -5,8 +5,14 @@ import { adjustMargin } from "../../../assets/styles/custom";
 import { checkType } from "../../../utils/functions";
 
 const AmountChargeOther = (props) => {
-  const handleObject = (prop1, prop2) => (event) => {
-    props.setData({ ...props.data, [prop1]: { [prop2]: event.target.value } });
+  const handleObject = (event) => {
+    props.setData({
+      ...props.data,
+      amountCharge: {
+        ...props.data.amountCharge,
+        threeFour: event.target.value,
+      },
+    });
   };
 
   return (
@@ -24,7 +30,7 @@ const AmountChargeOther = (props) => {
         label="Amount to be charge"
         placeholder="3 - 4 wheelers"
         style={adjustMargin.left}
-        onChange={handleObject("amountCharge", "threeFour")}
+        onChange={handleObject}
         disabled={checkType(false, props, "two")}
         startAdornment={<InputAdornment position="start">₹</InputAdornment>}
       />
