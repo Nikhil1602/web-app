@@ -23,4 +23,3 @@ Clone this project in your machine by running:
 ## Author
 
 - [Nikhil_Barot](https://github.com/Nikhil1602)
-# parking_web_app
