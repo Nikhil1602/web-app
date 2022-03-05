@@ -1,8 +1,20 @@
 # PARKING RESERVATION SYSTEM - WEB APPLICATION
 
-The Proposed Project is made with React framework,
-which performs admin-side functionality. Admin can
-easily make parking slots and manage users.
+The Proposed Project is Parking Reservation System
+where users can book their slots for specific period.
+The web-based application will be performed by admin,
+where he can create parking area, slots as well as
+manage all the users.
+
+### Tools used:
+
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Material-Ui
+- Firebase
+- Google-Maps-API
 
 ## Installation
 
@@ -22,4 +34,4 @@ Clone this project in your machine by running:
 
 ## Author
 
-- [Nikhil_Barot](https://github.com/Nikhil1602)
+- [@NikhilBarot](https://github.com/Nikhil1602)
