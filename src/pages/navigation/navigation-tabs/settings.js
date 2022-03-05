@@ -10,11 +10,17 @@ import { formAlert, isFormFilled } from "../../../utils/functions";
 
 const Settings = () => {
   const [data, setData] = React.useState(adminData);
+
   const submitForm = () => {
     if (isFormFilled(data)) {
       Database(data, "admin-data");
       formAlert("Form submitted successfully!", true);
     }
+  };
+
+  const resetForm = () => {
+    console.log("reset");
+    setData(adminData);
   };
 
   return (
@@ -31,11 +37,12 @@ const Settings = () => {
             onClick={submitForm}
             color="primary"
             id="button-save">
-            Save
+            Submit
           </Button>
           <Button
             variant="outlined"
             size="large"
+            onClick={resetForm}
             color="primary"
             id="button-reset">
             Reset

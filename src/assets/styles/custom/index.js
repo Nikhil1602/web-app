@@ -46,6 +46,14 @@ const invisible = {
   display: "none",
 };
 
+const location_button = {
+  color: "#fff",
+  fontWeight: "bold",
+  letterSpacing: "1px",
+  padding: "10px",
+  width: "150px",
+};
+
 export { fields, invisible };
-export { adjustMargin, inline };
+export { adjustMargin, inline, location_button };
 export { dateField, toggle, adjustWidth };

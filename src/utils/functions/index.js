@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { tab, details } from "../container";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import Navigation from "../../pages/navigation";
 import PlaceDetails from "../../components/piece/place-detail";
+import Settings from "../../pages/navigation/navigation-tabs/settings";
 import { adjustWidth } from "../../assets/styles/custom";
 import { Alert } from "@material-ui/lab";
 import { Grid, Paper } from "@material-ui/core";
@@ -39,6 +40,7 @@ const switchMenu = (item) => {
   } else {
     ReactDOM.render(tab.logout, document.getElementById("root"));
     auth.signOut();
+    window.localStorage.removeItem("id");
   }
 };
 
@@ -82,7 +84,6 @@ const showScreen = (props) => {
       <Navigation showDate={true} showVehicle={true} getName={props.name} />
       <div id="header">
         <PlaceDetails />
-        {/* <Settings /> */}
       </div>
       <div id="screen">{tab.dashboard}</div>
     </>,
@@ -133,6 +134,9 @@ const adjustStyle = (props) => {
 };
 
 const numConverter = (num) => {
+  if (num == null) {
+    return [null, null, null, null];
+  }
   return [
     Number(num.area.row),
     Number(num.area.col),
@@ -235,12 +239,15 @@ const isFormFilled = (data) => {
   if (
     data.placeName != "" &&
     data.address != "" &&
+    data.cityState != "" &&
     data.openingTime != "" &&
     data.closingTime != "" &&
     data.workingDays != [] &&
     data.vehicleType == "two" &&
     data.amountCharge.two != "" &&
-    data.delayCharge.two != ""
+    data.delayCharge.two != "" &&
+    data.location.latitude != 0 &&
+    data.location.longitude != 0
   ) {
     if (data.amountCharge.threeFour == "" && data.delayCharge.threeFour == "") {
       return true;
@@ -249,12 +256,15 @@ const isFormFilled = (data) => {
   } else if (
     data.placeName != "" &&
     data.address != "" &&
+    data.cityState != "" &&
     data.openingTime != "" &&
     data.closingTime != "" &&
     data.workingDays != [] &&
     data.vehicleType == "three" &&
     data.amountCharge.threeFour != "" &&
-    data.delayCharge.threeFour != ""
+    data.delayCharge.threeFour != "" &&
+    data.location.latitude != 0 &&
+    data.location.longitude != 0
   ) {
     if (data.amountCharge.two == "" && data.delayCharge.two == "") {
       return true;
@@ -265,10 +275,13 @@ const isFormFilled = (data) => {
     data.address != "" &&
     data.openingTime != "" &&
     data.closingTime != "" &&
+    data.cityState != "" &&
     data.workingDays != [] &&
     data.vehicleType == "four" &&
     data.amountCharge.threeFour != "" &&
-    data.delayCharge.threeFour != ""
+    data.delayCharge.threeFour != "" &&
+    data.location.latitude != 0 &&
+    data.location.longitude != 0
   ) {
     if (data.amountCharge.two == "" && data.delayCharge.two == "") {
       return true;
@@ -279,8 +292,11 @@ const isFormFilled = (data) => {
     data.address != "" &&
     data.openingTime != "" &&
     data.closingTime != "" &&
+    data.cityState != "" &&
     data.workingDays != [] &&
-    data.vehicleType == "all"
+    data.vehicleType == "all" &&
+    data.location.latitude != 0 &&
+    data.location.longitude != 0
   ) {
     if (
       data.amountCharge.threeFour != "" &&
@@ -297,18 +313,36 @@ const isFormFilled = (data) => {
 };
 
 const formAlert = (message, value) => {
-  // const [open, setOpen] = React.useState(true);
-  if (value) {
-    ReactDOM.render(
-      <div style={adjustWidth.width2}>
-        <Alert severity="success">{message}</Alert>
-      </div>,
-      document.getElementById("header")
-    );
+  ReactDOM.render(
+    <div style={adjustWidth.width2}>
+      <Alert severity={value ? "success" : "alert"}>{message}</Alert>
+    </div>,
+    document.getElementById("header")
+  );
+};
+
+const formatTime = (time) => {
+  let hrs = Number(time.substring(0, 2));
+  let min = time.substring(3, 5);
+  let flag = false;
+
+  if (hrs > 12) {
+    hrs -= 12;
+    flag = true;
+  }
+
+  if (hrs < 10) {
+    return "0" + hrs + ":" + min + " am";
+  } else if (hrs >= 10 && hrs <= 11) {
+    return hrs + ":" + min + " am";
+  } else if (hrs === 12 && flag) {
+    return hrs + ":" + min + " am";
+  } else {
+    return hrs + ":" + min + " pm";
   }
 };
 
 export { generateName, switchMenu, checkpoint, RenderScreen, createGrid };
 export { generator, getStyles, formatDate, alertBox, successBox, isFormFilled };
 export { adjustStyle, numConverter, setDetails, fillArray, checkType };
-export { formAlert };
+export { formAlert, showScreen, formatTime };

@@ -1,18 +1,17 @@
 import { auth } from "../../firebase";
-import { RenderScreen, alertBox } from "../../utils/functions";
+import { RenderScreen, alertBox, showScreen } from "../../utils/functions";
 
 const AccountLogin = (props) => {
   auth
     .signInWithEmailAndPassword(props.email, props.password)
     .then((userInfo) => {
-      if (userInfo.user.emailVerified) {
-        RenderScreen(true, props);
-      } else {
-        alertBox("You're not verfied!");
-      }
+      userInfo.user.emailVerified
+        ? RenderScreen(true, props)
+        : alertBox("You're not verfied!");
+      userInfo.user.emailVerified &&
+        window.localStorage.setItem("id", props.email);
     })
     .catch((error) => {
-      // console.log(error.code);
       RenderScreen(false, error);
     });
 };

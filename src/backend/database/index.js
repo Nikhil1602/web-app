@@ -3,8 +3,8 @@ import { db } from "../../firebase";
 
 const Database = (data, value) => {
   if (value == "admin-data") {
-    db.collection("Database")
-      .doc("admin-data")
+    db.collection("Admin-Database")
+      .doc(window.localStorage.getItem("id"))
       .set(data)
       .then(() => {
         console.log("Document successfully written!");
@@ -13,9 +13,9 @@ const Database = (data, value) => {
         console.error("Error writing document: ", error);
       });
   } else if (value == "slot-data") {
-    db.collection("Database")
-      .doc("slot-data")
-      .set(data)
+    db.collection("Admin-Database")
+      .doc(window.localStorage.getItem("id"))
+      .set(data, { merge: true })
       .then(() => {
         console.log("Document successfully written!");
       })

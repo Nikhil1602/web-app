@@ -140,6 +140,7 @@ const shrink = {
 const adminData = {
   placeName: "",
   category: "others",
+  cityState: "",
   address: "",
   openingTime: "",
   closingTime: "",
@@ -157,9 +158,20 @@ const adminData = {
     delay: 15,
     charge: 60,
   },
+  location: {
+    latitude: 0,
+    longitude: 0,
+  },
 };
+
+const defaultLocation = {
+  lat: 0,
+  lng: 0,
+};
+
+let setId;
 
 export { userAccount, userLength };
 export { details, menu, tab, adminData };
-export { days, MenuProps, today };
-export { passwordLength, shrink };
+export { days, MenuProps, today, setId };
+export { passwordLength, shrink, defaultLocation };

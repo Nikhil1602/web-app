@@ -39,11 +39,10 @@ const Account = () => {
   };
 
   const changeForm = (event) => {
-    if (changes.display) {
-      setChanges(userAccount.createAccount);
-    } else {
-      setChanges(userAccount.accountLogin);
-    }
+    changes.display
+      ? setChanges(userAccount.createAccount)
+      : setChanges(userAccount.accountLogin);
+
     if (event.target.id == "forgot-password-link") {
       setChanges(userAccount.passwordReset);
     }

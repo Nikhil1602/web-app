@@ -6,6 +6,7 @@ import Address from "../sub-piece/form-left/address-field";
 import OpeningTime from "../sub-piece/form-left/opening-time";
 import WorkingDays from "../sub-piece/form-left/working-days";
 import ClosingTime from "../sub-piece/form-left/closing-time";
+import CityState from "../sub-piece/form-left/city-state";
 
 const FormLeft = (props) => {
   const handleData = (prop) => (event) => {
@@ -18,6 +19,7 @@ const FormLeft = (props) => {
         <FormControl variant="outlined" id="left-form-fields" required>
           <PlaceName handleData={handleData} />
           <PlaceCategory data={props.data} handleData={handleData} />
+          <CityState handleData={handleData} />
           <Address handleData={handleData} />
           <OpeningTime handleData={handleData} />
           <ClosingTime handleData={handleData} />
